@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'IRANSans';
+    src: url('IRANSansWeb.woff');
+}
+@font-face {
+    font-family: 'IRANSans-Bold';
+    src: url('IRANSansWeb_Bold.woff');
+}
+@font-face {
+    font-family: 'IRANSans-Light';
+    src: url('IRANSansWeb_Light.woff');
+}
+@font-face {
+    font-family: 'IRANSans-Medium';
+    src: url('IRANSansWeb_Medium.woff');
+}
+@font-face {
+    font-family: 'VistaDev';
+    src: url('Vazir-Medium-FD-WOL.ttf');
+}
