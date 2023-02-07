@@ -1,8 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// const that = Vue.prototype;
-
 import Home from "@/components/home/Home";
 import About from "@/components/home/About";
 import Policy from "@/components/home/Policy";
@@ -141,81 +139,5 @@ const router = new VueRouter({
   }
 });
 
-// const forLogin = [
-//   "History",
-//   "Dashboard",
-//   "Wallet",
-//   "Setting",
-//   "Messages",
-//   "Profile",
-//   "Orders",
-//   "Trade"
-// ];
-// const unAuthorUser = ["History", "Dashboard", "Wallet", "Orders"];
-// const otp = ["TwoStep", "ResetPass"];
-// const auth = ["Login", "Register", "ForgetPass"];
-
-// router.beforeEach(async (to, from, next) => {
-
-//     that.state.loading = true
-//     if (that.state.token) {
-
-//         if (!that.state.gotten) {
-//             await that.$getuserInfo()
-//             await that.$getFees()
-//         }
-
-//         that.state.loading = true
-
-//         if (from.name === 'Trade' || from.name === 'Blog') {
-//             await window.open(to.fullPath, '_self')
-//         } else if (otp.includes(to.name) || auth.includes(to.name)) {
-//             next({name: 'Home'})
-//         } else if (to.name === 'Trade') {
-//             try {
-//                 that.state.loading = true
-//                 await that.$axios(`/markets/${to.params.tradeFrom}_${to.params.tradeTo}`)
-//                 next()
-//             } catch (e) {
-//                 if (e.response.data.message === "MARKET_IS_NOT_ACTIVE") {
-//                     if (otp.includes(from.name)) {
-//                         next({name: 'Home'})
-//                     } else {
-//                         await that.$error('بازار غیرفعال است')
-//                         next(from)
-//                     }
-//                 }
-//             }
-//         } else {
-//             if (that.state.userInfo.authorized) {
-//                 next()
-//             } else {
-//                 if (otp.includes(from.name) && to.name !== 'userAccount') {
-//                     next({name : 'userAccount'})
-//                 } else if (unAuthorUser.includes(to.name)) {
-//                     that.state.loading = false
-//                     const res = await that.$error('عدم دسترسی', 'برای دسترسی به این بخش نیاز است ابتدا حساب شما تکمیل و تایید شود', 'error', 'حساب کاربری')
-//                     if (res.isConfirmed) {
-//                         next('/useraccount')
-//                     } else {
-//                         next(from)
-//                     }
-//                 } else next()
-//             }
-//         }
-//     } else {
-//         if ((otp.includes(to.name) && !Vue.$cookies.isKey('username')) || forLogin.includes(to.name))
-//             next({name: 'Login'})
-//         else {
-//             next()
-//         }
-//     }
-//     that.state.loading = false
-// })
-// // router.afterEach((to, from) => {
-// //     if (from.name === 'Trade') {
-// //         location.reload()
-// //     }
-// // })
 
 export default router;
