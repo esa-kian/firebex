@@ -1,30 +1,9 @@
 <template>
   <div class="desktop box1">
     <OverLoading v-if="loading" />
-    <div class="head">
-      <select name="" id="">
-        <option value="">همه</option>
-        <option value="">خرید</option>
-        <option value="">فروش</option>
-      </select>
-      <span> آخرین معاملات </span>
-    </div>
     <div class="box2">
       <perfect-scrollbar>
         <table>
-          <tr class="table-header">
-            <td>مقدار</td>
-            <td>قیمت واحد</td>
-            <td>قیمت کل</td>
-            <td>زمان</td>
-          </tr>
-          <tr v-if="!tableContents.length">
-            <td colspan="4">
-              <p style="width: 100%; text-align: center">
-                .در حال حاضر اطلاعاتی وجود ندارد
-              </p>
-            </td>
-          </tr>
           <tr
             v-else
             :style="{
