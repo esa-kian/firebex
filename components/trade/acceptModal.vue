@@ -10,18 +10,12 @@
                         class="btn-close"
                         @click="close"
                         aria-label="Close modal" alt="">
-                <header class="modal-header">
-                    لغو درخواست
-                </header>
+             
                 <section class="modal-body" style="direction: rtl">
                     <img width="150px" src="../../assets/warning.svg">
-                    <div class="row justify-content-center" style="font-size: 16px">
-                        ایا از لغو درخواست خود مطمئن هستید؟
-                    </div>
+                 
                 </section>
                 <footer class="modal-btn">
-                    <button type="button" class="normal-btn" @click="close">خیر</button>
-                    <button type="button" class="normal-btn" @click="remove">بله</button>
                 </footer>
             </div>
         </div>
