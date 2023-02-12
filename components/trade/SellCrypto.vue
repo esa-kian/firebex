@@ -2,12 +2,7 @@
     <div class="main">
         <form @input="calculate">
             <div class="row no-gutters">
-                <label
-                        class="col-5 col-sm-12 col-md-5"
-                        :for="'unitprice'+id">
-                    قیمت واحد
-                    ({{$coinLabel[$route.params.tradeTo]}})
-                </label>
+               
                 <input
                         @input="unitPrice = $toLocal(unitPrice)"
                         :style="{borderColor:(danger?'red':'')}"
@@ -16,14 +11,14 @@
                         v-model="unitPrice"
                         :id="'unitprice'+id"
                         :readonly="!limit"
-                        :placeholder="!limit? 'بازار' : ''"
+                        :placeholder="!limit? 'market' : ''"
                 >
             </div>
             <div class="row no-gutters">
                 <label
                         class="col-5 col-sm-12 col-md-5"
                         :for="'amount'+id">
-                    مقدار
+                    
                     {{$coinLabel[$route.params.tradeFrom]}}
                 </label>
                 <input
@@ -46,14 +41,13 @@
                 </div>
             </div>
             <div class="row no-gutters" style="position: relative">
-                <label class="col-5 col-sm-12 col-md-5" :for="'totalprice'+id">قیمت کل
-                    ({{$coinLabel[$route.params.tradeTo]}})</label>
+              
                 <input class="col-7 col-sm-12 col-md-7" type="text" v-model="totalPrice" :id="'totalprice'+id"
-                       readonly :placeholder="!limit? 'بازار' : ''">
+                       readonly :placeholder="!limit? 'market' : ''">
                 <over-loading v-if="calculating" style="margin:0"/>
             </div>
             <div v-if="limit" class="row no-gutters">
-                <label class="col-5 col-sm-12 col-md-5">تاریخ انقضا</label>
+                
                 <date-picker id="exp" type="datetime" v-model="eDate"
                              color="#efb90a"
                              :format="$dateFormat['en']"
@@ -63,17 +57,17 @@
                              class="col-7 col-sm-12 col-md-7 m-0"/>
             </div>
             <div class="footer">
-                <a>موجودی</a>
+                
                 <a class="link" @click="putcash(decimal,1)">{{$toLocal(cash.toFixed(decimal))}}
                     {{$coinUnit[$route.params.tradeFrom]}}</a>
             </div>
             <div class="footer" v-if="limit">
-                <a style="text-align: right">بالا ترین پیشنهاد خرید</a>
+                
                 <a style="text-align: left" class="link" @click="setMin">{{$toLocal(state.shopInfo.maxBuy)}}
                     {{$coinUnit[$route.params.tradeTo]}}</a>
             </div>
             <div class="footer">
-                <a>میزان کارمزد فعلی</a>
+                
                 <a>٪ {{wage}}</a>
             </div>
             <button
@@ -82,21 +76,20 @@
                     class="btn"
                     :disabled="readonly"
             >
-                فروش {{$coinLabel[$route.params.tradeFrom]}}
+                 {{$coinLabel[$route.params.tradeFrom]}}
             </button>
             <button
                     @click.prevent=""
                     class="btn"
                     v-else-if="state.userInfo.pending"
             >
-                حساب تایید نشده
+                
             </button>
             <button
                     @click.prevent="$router.push('/useraccount')"
                     class="btn"
                     v-else
             >
-                تکمیل حساب
             </button>
         </form>
         <shop-modal v-if="show" @close="show = false" :unitPrice="unitPrice" :totalPrice="totalPrice"
@@ -250,160 +243,3 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    .main {
-        font-family: VistaDev, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-radius: 5px;
-        border: var(--border-light) solid 1px;
-        padding-top: 10px;
-    }
-
-    .dark .main {
-        border: var(--border-dark) solid 2px;
-    }
-
-    form {
-        width: 100%;
-    }
-
-    form div:not(.btn) {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 10px 20px;
-    }
-
-    label {
-        text-align: right;
-    }
-
-    input {
-        font-family: VistaDev, sans-serif;
-        border: solid rgba(54, 52, 53, 0.15) 0.5px;
-        height: 30px;
-        border-radius: 10px;
-        padding: 0 5px !important;
-        text-align: center;
-        color: var(--font-light);
-    }
-
-    .dark input {
-        border-color: rgba(255, 255, 255, 0.3);
-        color: var(--font-dark);
-    }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-
-    /* Firefox */
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
-
-    input:hover {
-        border: solid rgba(54, 52, 53, 0.3) 0.5px;
-    }
-
-    .dark input:hover {
-        border: solid rgba(255, 255, 255, 0.6) 0.5px;
-    }
-
-    input:focus {
-        border: solid rgba(54, 52, 53, 0.5) 0.5px;
-    }
-
-    .dark input:focus {
-        border: solid rgba(255, 255, 255, 0.8) 0.5px;
-    }
-
-    input:read-only {
-        background-color: rgba(0, 0, 0, 0.1);
-        border: none;
-    }
-
-    .dark input:read-only {
-        background-color: rgba(255, 255, 255, 0.3);
-        border: none;
-    }
-
-    .percent-btn {
-        padding: 0;
-    }
-
-    .percent-btn label {
-        font-family: VistaDev, sans-serif;
-        text-align: center;
-        font-size: 12px;
-        font-weight: 600;
-        background-color: transparent;
-        border: solid 1px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        width: 100%;
-        height: 30px;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .dark .percent-btn label {
-        border-color: rgba(255, 255, 255, 0.3);;
-    }
-
-    .percent-btn label:hover {
-        border: solid 1px #36343570
-    }
-
-    .dark .percent-btn label:hover {
-        border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    input[type=radio] {
-        display: none;
-    }
-
-    input:checked ~ label {
-        border: solid 1px #36343570
-    }
-
-    .link {
-        text-decoration: underline;
-    }
-
-    .footer {
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-    }
-
-    .btn {
-        font-family: VistaDev, sans-serif;
-        font-size: 14px;
-        background-color: var(--main-red);
-        height: 40px;
-        width: 100%;
-        border: none;
-        border-bottom-left-radius: 2.5px;
-        border-bottom-right-radius: 2.5px;
-        color: var(--font-dark);
-        cursor: pointer;
-        &:disabled {
-            opacity: 0.5;
-            cursor: default;
-        }
-    }
-
-    .dark a {
-        color: var(--font-dark);
-    }
-
-</style>
