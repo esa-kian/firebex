@@ -1,19 +1,19 @@
 <template>
   <div class="box1">
-    <!-- خرید و فروش {{ $coinLabel[$route.params.tradeFrom] }} -->
+    
     <div class="tab-group">
       <div class="tabs">
         <div
           :class="!limit ? 'tab-content' : 'tab-content-active'"
           @click.prevent="limit = true"
         >
-          سفارش محدود
+
         </div>
         <div
           :class="limit ? 'tab-content' : 'tab-content-active'"
           @click.prevent="limit = false"
         >
-          بازار
+          
         </div>
       </div>
       <div class="tabs">
@@ -21,13 +21,13 @@
           @click.prevent="switchTabBuy(true)"
           :class="[!sell ? 'tab-content' : 'tab-content-active buy-tab']"
         >
-          خرید
+          
         </div>
         <div
           @click.prevent="switchTabBuy(false)"
           :class="[sell ? 'tab-content' : 'tab-content-active sell-tab']"
         >
-          فروش
+          
         </div>
       </div>
     </div>
@@ -37,27 +37,24 @@
         <div class="setting">
           <div class="myrow">
             <div class="type">
-              <label for="type">قیمت واحد</label>
+              <label for="type"></label>
               <input type="number" id="value" />
               <div class="myrow">
-                <div class="data">پایین ترین پیشنهاد فروش</div>
-                <div class="data">۸۷,۹۱۸,۲۷۳,۹۱۲</div>
+                <div class="data"></div>
+                <div class="data"></div>
               </div>
               <div class="myrow">
-                <div class="data">موجودی</div>
-                <div class="data">۸۷,۹۱۸,۲۷۳,۹۱۲</div>
+                <div class="data"></div>
+         
               </div>
             </div>
             <div class="value">
-              <label for="value">مقدار بیت کوین</label>
+              <label for="value"></label>
               <input type="number" id="value" />
               <div class="calc">
-                <div class="percent">۱۰۰٪</div>
-                <div class="percent">۷۵٪</div>
-                <div class="percent">۵۰٪</div>
-                <div class="percent">۲۵٪</div>
+       
               </div>
-              <label for="value">تاریخ انقضا</label>
+              <label for="value"></label>
               <date-picker
                 popover
                 :auto-submit="true"
@@ -70,18 +67,15 @@
         </div>
         <div :class="[sell ? 'finish-buy' : 'finish-sell', 'finish']">
           <div class="total">
-            <label for="total">مبلغ کل معامله</label>
+            <label for="total"></label>
             <div class="input">
               <input type="number" :class="[!sell ? 'sell-input' : '']" />
-              <!-- <select name="" id="">
-                <option value="">تومان (IRT)</option>
-              </select> -->
+         
             </div>
-            <span class="wage">+کارمزد ۸.۰</span>
+      
           </div>
           <div class="submit">
-            <button v-if="sell" class="buy-btn">خرید</button>
-            <button v-else class="sell-btn">فروش</button>
+          
           </div>
         </div>
       </div>
