@@ -14,26 +14,22 @@
                         alt=""
                 >
                 <header class="modal-header">
-                    ثبت درخواست
+                    submit
                 </header>
                 <section class="modal-body" style="direction: rtl">
                     <a class="row justify-content-center" style="font-size: 16px">
-                        در خواست<a style="font-weight: bold; margin: 0 3px">{{typeLabel[type]}}</a> به شرح زیر ثبت شود؟
+                        <a style="font-weight: bold; margin: 0 3px">{{typeLabel[type]}}</a>  
                     </a>
                     <div>
-                        <a>قیمت واحد <a style="font-size: 10px">(تومان)</a></a>
                         <a style="font-weight: bold;font-size: 14px">{{unitPrice}}</a>
                     </div>
                     <div>
-                        <a>مقدار بیتکوین </a>
                         <a style="font-weight: bold;font-size: 14px">{{amount}}</a>
                     </div>
                     <div>
-                        <a>قیمت کل <a style="font-size: 10px">(تومان)</a></a>
                         <a style="font-weight: bold;font-size: 14px">{{totalPrice}}</a>
                     </div>
                     <div v-if="date">
-                        <a>تاریخ انقضا</a>
                         <a style="font-weight: bold;font-size: 14px;direction: ltr">{{$G2J(date,'faDateTime')}}</a>
                     </div>
                 </section>
@@ -49,10 +45,7 @@
 <script>
     import OverLoading from "@/components/Tools/over-loading";
 
-    const typeLabel = {
-        BUY: 'خرید',
-        SELL: 'فروش',
-    }
+ 
     export default {
         name: "ShopModal",
         components: {OverLoading},
@@ -94,12 +87,10 @@
                     await this.$axios.post(`/orders/${this.type.toLowerCase()}`, orderDetail)
                     this.loading = false
                     this.$emit('close')
-                    this.$error('', 'سفارش با موفقیت ثبت شد', 'success')
                 } catch (error) {
                     this.loading = false
                     this.$emit('close')
                     if (error.response.data.message === "the amount of order is bigger than market liquidity") {
-                        await this.$error('', 'حجم درخواستی بیش از مقدار بازار است.')
                     }
                 }
             },
