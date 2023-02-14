@@ -12,36 +12,8 @@
           />
         </router-link>
       </li>
-      <li>
-        <router-link @click.native="closeMenu()" :to="'/'"
-          >صفحه اصلی</router-link
-        >
-      </li>
-      <li>
-        <router-link @click.native="closeMenu()" :to="'/about-us'"
-          >درباره ما</router-link
-        >
-      </li>
-      <li>
-        <router-link @click.native="closeMenu()" :to="'/privacy-policy'"
-          >قوانین و مقررات</router-link
-        >
-      </li>
-      <li>
-        <router-link @click.native="closeMenu()" :to="'/faq'"
-          >راهنما</router-link
-        >
-      </li>
-      <li>
-        <router-link @click.native="closeMenu()" :to="'/blog'"
-          >بلاگ</router-link
-        >
-      </li>
-      <li>
-        <router-link @click.native="closeMenu()" :to="'/contact-us'"
-          >تماس با ما</router-link
-        >
-      </li>
+   
+   
     </ul>
 
     <div
@@ -49,10 +21,10 @@
       v-if="!['Login', 'Register', 'Forgot'].includes($route.name)"
     >
       <router-link :to="'/login'" @click.native="closeMenu()">
-        <button>ورود</button>
+     
       </router-link>
       <router-link :to="'/register'" @click.native="closeMenu()">
-        <button>ثبت نام</button>
+       
       </router-link>
     </div>
   </div>

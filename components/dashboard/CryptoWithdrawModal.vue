@@ -2,39 +2,31 @@
   <div class="modal">
     <div class="content">
       <div class="header">
-        <div @click="close" class="close">بستن</div>
-        <div class="title">برداشت {{ crypto_name }}</div>
+        <div @click="close" class="close"></div>
+        <div class="title"> {{ crypto_name }}</div>
       </div>
       <div class="body">
         <div class="amount">
-          <label for="">مقدار</label>
+          <label for=""></label>
           <div class="input">
             <input class="amount" type="text" name="" id="" />
           </div>
         </div>
         <div class="amount">
-          <label for="">آدرس کیف پول مقصد</label>
           <div class="input">
             <input class="amount" type="text" name="" id="" />
           </div>
-          <span
-            >وارد کردن آدرس نادرست منجر به از دست رفتن منابع مالی شما
-            میشود.</span
-          >
+       
         </div>
         <div class="amount">
-          <label for="">کد شناسایی دوعاملی</label>
           <div class="input">
             <input class="amount" type="text" name="" id="" />
           </div>
-          <span
-            >کارمزد انتقال بیت کوین بوده و مربوط به ثبت تراکنش در شبکه‌ی اتریوم
-            میباشد.</span
-          >
+         
         </div>
       </div>
       <div class="footer">
-        <button @click="close">برداشت</button>
+        <button @click="close"></button>
       </div>
     </div>
   </div>
