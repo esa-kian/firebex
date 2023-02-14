@@ -2,48 +2,37 @@
   <div class="dashboard">
     <div class="attention">
       <div class="icon"></div>
-      کاربر گرامی جهت افزایش امنیت حساب، احراز هویت دوعاملی را از طریق این صفحه
-      فعال نمایید.
     </div>
 
     <div class="info">
       <div class="personal">
         <div class="level">
           <div class="now">
-            <div class="title">سطح کاربری:</div>
-            <div class="badge">نقره ای</div>
-            <div class="caption">تراکنش کمتر از 10 میلیون</div>
-            <div class="wage">کارمزد: ۰.۳۵٪</div>
+        
           </div>
           <div class="next">
-            <div class="title">صعود به سطح بعدی:</div>
-            <div class="guide">تکمیل فرآیند احراز هویت</div>
+        
           </div>
         </div>
         <div class="information">
           <div class="details">
             <div class="name">
-              <div class="title">نام و نام خانوادگی</div>
-              <div class="value">احسان احمدی کیان</div>
+          
             </div>
             <div class="phone">
-              <div class="title">شماره تلفن همراه</div>
-              <div class="value">۰۹۱۲۹۹۹۸۸۷۷</div>
+        
             </div>
             <div class="email">
-              <div class="title">آدرس ایمیل</div>
-              <div class="value">user@firebex.com</div>
+          
             </div>
           </div>
           <button @click.prevent="$router.push('/profile')" class="edit">
             <div class="icon"></div>
-            ویرایش اطلاعات
           </button>
         </div>
       </div>
       <div class="market">
         <div class="side">
-          <div class="title">بازار ها</div>
           <div class="switch">
             <switcher></switcher>
           </div>
@@ -51,9 +40,7 @@
         <div class="table">
           <table>
             <tr class="line">
-              <th>رمز ارز</th>
-              <th>آخرین قیمت</th>
-              <th>تغییرات</th>
+            
             </tr>
 
             <tr>
@@ -64,10 +51,7 @@
                   height="23"
                   alt=""
                 />
-                بیت کوین
               </td>
-              <td>۸۷,۹۱۸,۲۷۳,۹۱۲</td>
-              <td class="increase">+ ۴/۵ ٪</td>
             </tr>
             <tr>
               <td class="crypto">
@@ -77,10 +61,7 @@
                   height="23"
                   alt=""
                 />
-                اتریوم
-              </td>
-              <td>۸۷,۹۱۸,۲۷۳,۹۱۲</td>
-              <td>۰ ٪</td>
+              
             </tr>
             <tr>
               <td class="crypto">
@@ -90,10 +71,7 @@
                   height="23"
                   alt=""
                 />
-                تتر
-              </td>
-              <td>۸۷,۹۱۸,۲۷۳,۹۱۲</td>
-              <td class="increase">+ ۴/۵ ٪</td>
+            
             </tr>
             <tr>
               <td class="crypto">
@@ -103,10 +81,7 @@
                   height="23"
                   alt=""
                 />
-                دش کوین
-              </td>
-              <td>۸۷,۹۱۸,۲۷۳,۹۱۲</td>
-              <td class="increase">+ ۴/۵ ٪</td>
+               
             </tr>
             <tr>
               <td class="crypto">
@@ -116,10 +91,7 @@
                   height="23"
                   alt=""
                 />
-                ریپل
-              </td>
-              <td>۸۷,۹۱۸,۲۷۳,۹۱۲</td>
-              <td class="decrease">- ۴/۵ ٪</td>
+            
             </tr>
             <tr>
               <td class="crypto">
@@ -129,28 +101,21 @@
                   height="23"
                   alt=""
                 />
-                لایت کوین
-              </td>
-              <td>۸۷,۹۱۸,۲۷۳,۹۱۲</td>
-              <td class="decrease">- ۴/۵ ٪</td>
+            
             </tr>
           </table>
         </div>
       </div>
       <div class="wallet">
         <div class="legends">
-          <h3>کیف پول</h3>
           <div class="bitcoin">
-            <div class="key">بیت کوین</div>
-            <div class="value">۱۶.۶۹۸</div>
+           
           </div>
           <div class="ripple">
-            <div class="key">ریپل</div>
-            <div class="value">۱۶.۶۹۸</div>
+          
           </div>
           <div class="litecoin">
-            <div class="key">لایت کوین</div>
-            <div class="value">۱۶.۶۹۸</div>
+           
           </div>
         </div>
         <div class="chart">
@@ -163,8 +128,7 @@
             :key="series.length"
           />
           <div class="actions">
-            <button class="deposit">واریز</button>
-            <button class="withdraw">برداشت</button>
+         
           </div>
         </div>
       </div>
@@ -175,13 +139,12 @@
           @click.prevent="switchTab"
           :class="[!active ? 'tab-content' : 'tab-content-active']"
         >
-          سفارشات باز
         </div>
         <div
           @click.prevent="switchTab"
           :class="[active ? 'tab-content' : 'tab-content-active']"
         >
-          تاریخچه
+          
         </div>
       </div>
       <div class="trades">
@@ -233,7 +196,6 @@ export default {
       active: true,
       wallets: [
         {
-          name: "تومان",
           cash: 157000000,
           unit: "",
           unitPrice: 1,
@@ -242,7 +204,6 @@ export default {
           benefitPercent: "",
         },
         {
-          name: "بیتکوین",
           cash: 15.7,
           unit: "BTC",
           unitPrice: 157000000,
@@ -252,7 +213,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "اتریوم",
           cash: 5.2,
           unit: "ETH",
           unitPrice: 157000000,
@@ -262,7 +222,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "کاردانو",
           cash: 10,
           unit: "ADA",
           unitPrice: 157000000,
@@ -272,7 +231,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "ترون",
           cash: 5.2,
           unit: "TRX",
           unitPrice: 157000000,
@@ -282,7 +240,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "بایننس کوین",
           cash: 5.2,
           unit: "BNB",
           unitPrice: 157000000,
@@ -292,7 +249,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "مونرو",
           cash: 0,
           unit: "XMR",
           unitPrice: 157000000,
@@ -302,7 +258,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "لینک",
           cash: 0,
           unit: "LINK",
           unitPrice: 157000000,
@@ -312,7 +267,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "تزوس",
           cash: 0,
           unit: "XTZ",
           unitPrice: 157000000,
@@ -322,7 +276,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "بیتکوین کش",
           cash: 0,
           unit: "BCH",
           unitPrice: 157000000,
@@ -332,7 +285,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "ریپل",
           cash: 0,
           unit: "XRP",
           unitPrice: 157000000,
@@ -342,7 +294,6 @@ export default {
           wage: "0.2",
         },
         {
-          name: "تتر",
           cash: 0,
           unit: "USDT",
           unitPrice: 157000000,
@@ -418,13 +369,12 @@ export default {
                   color: "var(--tooDark)",
                   offsetY: 10,
                   formatter: function (val) {
-                    return `${Number(val).toLocaleString()} تومان`;
+                    return `${Number(val).toLocaleString()} `;
                   },
                 },
                 total: {
                   show: true,
                   showAlways: false,
-                  label: "ارزش موجودی کل",
                   fontSize: "16px",
                   fontFamily: "Yekan",
                   fontWeight: 600,
@@ -433,7 +383,7 @@ export default {
                     w = w.globals.seriesTotals.reduce((a, b) => {
                       return a + b;
                     }, 0);
-                    return w.toLocaleString() + "\n" + "تومان";
+                    return w.toLocaleString() + "\n" + "";
                   },
                 },
               },
