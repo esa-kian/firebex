@@ -2,22 +2,18 @@
   <div class="modal">
     <div class="content">
       <div class="header">
-        <div @click="close" class="close">بستن</div>
+        <div @click="close" class="close"></div>
         <div class="title">واریز {{ crypto_name }}</div>
       </div>
       <div class="body">
         <div class="amount">
-          <label for=""> آدرس کیف پول شما در زیر قابل مشاهده است.</label>
           <div class="input">
-            برای واریز ارزهای دیجیتال به این کیف، می‌توانید از این آدرس استفاده
-            کنید.
           </div>
         </div>
         <div class="key">jshd87w0djww02d99fjjsodvhspd9v</div>
         <div class="qr"></div>
       </div>
       <div class="footer">
-        <button @click="close">کپی آدرس</button>
       </div>
     </div>
   </div>
