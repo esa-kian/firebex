@@ -1,24 +1,22 @@
 <template>
   <div class="history">
     <div class="trades">
-      <h4>تاریخچه معاملات</h4>
+      
       <trade-history></trade-history>
     </div>
 
     <div class="transactions">
-      <h4>تاریخچه تراکنش ها</h4>
+      
       <div class="tabs">
         <div
           @click.prevent="switchTab"
           :class="[!active ? 'tab-content' : 'tab-content-active']"
         >
-          تراکنش های تبدیل
         </div>
         <div
           @click.prevent="switchTab"
           :class="[active ? 'tab-content' : 'tab-content-active']"
         >
-          تراکنش های کیف پول
         </div>
       </div>
       <div class="wallets">
@@ -26,38 +24,26 @@
           <tr>
             <th>
               <select name="" id="">
-                <option value="">همه</option>
-                <option value="">واریز</option>
-                <option value="">برداشت</option>
+               
               </select>
             </th>
             <th>
               <select class="type" name="" id="">
-                <option value="">نوع ارز</option>
-                <option value="">بیت کوین</option>
-                <option value="">اتریوم</option>
-                <option value="">ریپل</option>
-                <option value="">لایت کوین</option>
-                <option value="">دش کوین</option>
-                <option value="">تتر</option>
+              
               </select>
             </th>
-            <th>مقدار</th>
-            <th>آدرس کیف پول مقصد</th>
-            <th>تاریخ</th>
+       
             <th>
               <select name="" id="">
-                <option value="">وضعیت</option>
-                <option value="">انجام شده</option>
-                <option value="">لغو شده</option>
+              
               </select>
             </th>
-            <th>پیگیری</th>
+         
           </tr>
 
           <tr v-for="transaction in transactions" :key="transaction.id">
-            <td v-if="transaction.type == 'sell'" class="sell">برداشت</td>
-            <td v-if="transaction.type == 'buy'" class="buy">واریز</td>
+            <td v-if="transaction.type == 'sell'" class="sell"></td>
+            <td v-if="transaction.type == 'buy'" class="buy"></td>
 
             <td v-if="transaction.currency == 'bitcoin'">
               <div class="currency">
@@ -67,7 +53,6 @@
                   height="23"
                   alt=""
                 />
-                بیت کوین
               </div>
             </td>
             <td v-if="transaction.currency == 'ether'">
@@ -78,7 +63,7 @@
                   height="23"
                   alt=""
                 />
-                اتریوم
+                
               </div>
             </td>
             <td v-if="transaction.currency == 'tether'">
@@ -89,7 +74,7 @@
                   height="23"
                   alt=""
                 />
-                تتر
+                
               </div>
             </td>
             <td v-if="transaction.currency == 'dash'">
@@ -100,7 +85,6 @@
                   height="23"
                   alt=""
                 />
-                دش کوین
               </div>
             </td>
             <td v-if="transaction.currency == 'ripple'">
@@ -111,7 +95,7 @@
                   height="23"
                   alt=""
                 />
-                ریپل
+                
               </div>
             </td>
             <td v-if="transaction.currency == 'litecoin'">
@@ -122,7 +106,6 @@
                   height="23"
                   alt=""
                 />
-                لایت کوین
               </div>
             </td>
 
@@ -131,9 +114,7 @@
             <td>{{ transaction.date }}</td>
 
             <td v-if="transaction.status == 'pending'" class="buy">
-              انجام شده
             </td>
-            <td v-else class="sell">لغو شده</td>
             <td>
               <img
                 src="../../assets/dashboard/tracking.svg"
@@ -171,9 +152,6 @@ export default {
           currency: "bitcoin",
           value: 0.004,
           address: "a1075db55d416d3cf302fc80e9d5fbf5d48d",
-
-          date: "۹۹/۹/۹ - ۲۳:۱۲",
-          status: "۶۰٪",
         },
         {
           id: 2,
@@ -183,9 +161,6 @@ export default {
           currency: "ether",
           value: 0.05,
           address: "a1075db55d416d3cf302fc80e9d5fbf5d48d",
-
-          date: "۹۹/۹/۹ - ۲۳:۱۲",
-          status: "pending",
         },
         {
           id: 3,
@@ -196,8 +171,6 @@ export default {
           value: 12,
           address: "a1075db55d416d3cf302fc80e9d5fbf5d48d",
 
-          date: "۹۹/۹/۹ - ۲۳:۱۲",
-          status: "pending",
         },
         {
           id: 4,
@@ -208,8 +181,6 @@ export default {
           value: 14,
           address: "a1075db55d416d3cf302fc80e9d5fbf5d48d",
 
-          date: "۹۹/۹/۹ - ۲۳:۱۲",
-          status: "۲۰٪",
         },
         {
           id: 5,
@@ -220,8 +191,6 @@ export default {
           value: 34,
           address: "a1075db55d416d3cf302fc80e9d5fbf5d48d",
 
-          date: "۹۹/۹/۹ - ۲۳:۱۲",
-          status: "pending",
         },
         {
           id: 6,
@@ -232,8 +201,6 @@ export default {
           value: 64,
           address: "a1075db55d416d3cf302fc80e9d5fbf5d48d",
 
-          date: "۹۹/۹/۹ - ۲۳:۱۲",
-          status: "۰٪",
         },
       ],
       active: true,
